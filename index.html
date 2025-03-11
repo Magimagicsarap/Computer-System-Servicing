@@ -3,84 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS - Computer System Servicing</title>
+    <title>TECH-THINGS</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
-        header { background: #333; color: #fff; padding: 15px; text-align: center; }
-        nav { background: #444; padding: 10px; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; }
-        nav a { color: white; margin: 10px; text-decoration: none; font-size: 18px; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; display: flex; flex-direction: column; min-height: 100vh; }
+        .content { flex: 1; padding-bottom: 60px; }
+        header { background: #1E2A38; color: #fff; padding: 20px; text-align: center; font-size: 24px; font-weight: bold; }
+        nav { background: #34495E; padding: 15px; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; }
+        nav ul li { position: relative; margin: 0 10px; }
+        nav ul li a { color: white; text-decoration: none; font-size: 18px; padding: 10px; border-radius: 5px; transition: 0.3s; display: block; cursor: pointer; }
+        nav ul li:hover > ul { display: block; position: absolute; background: #2C3E50; padding: 0; border-radius: 5px; }
+        nav ul ul { display: none; list-style: none; padding: 0; }
+        nav ul ul li { width: 200px; }
+        nav ul ul li a { padding: 10px; display: block; color: white; }
         .container { padding: 20px; max-width: 1200px; margin: auto; }
-        .section { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; }
-        footer { background: #333; color: #fff; text-align: center; padding: 10px; margin-top: 20px; }
-        iframe { width: 100%; max-width: 560px; height: auto; aspect-ratio: 16/9; }
+        .section { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); display: none; }
+        footer { background: #1E2A38; color: #fff; text-align: center; padding: 15px; position: fixed; width: 100%; bottom: 0; left: 0; }
         @media (max-width: 768px) {
-            nav a { font-size: 16px; }
-            .container { padding: 10px; }
-            .section { padding: 10px; }
+            nav ul { flex-direction: column; align-items: center; }
+            nav ul ul { position: static; }
         }
     </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => section.style.display = 'none');
+            if (sectionId === 'wifi') {
+                document.getElementById('wifi-basics').style.display = 'block';
+                document.getElementById('wifi-security').style.display = 'block';
+                document.getElementById('wifi-troubleshooting').style.display = 'block';
+            } else if (sectionId === 'networking') {
+                document.getElementById('cabling').style.display = 'block';
+                document.getElementById('structured-cabling').style.display = 'block';
+                document.getElementById('patch-panel').style.display = 'block';
+            } else if (sectionId === 'security') {
+                document.getElementById('firewalls').style.display = 'block';
+                document.getElementById('encryption').style.display = 'block';
+                document.getElementById('network-monitoring').style.display = 'block';
+            } else if (sectionId === 'network-programming') {
+                document.getElementById('tcp-ip').style.display = 'block';
+                document.getElementById('sockets').style.display = 'block';
+                document.getElementById('web-development').style.display = 'block';
+            } else {
+                document.getElementById(sectionId).style.display = 'block';
+            }
+        }
+        window.onload = function() {
+            showSection('introduction');
+        };
+    </script>
 </head>
 <body>
     <header>
-        <h1>Computer System Servicing</h1>
+        TECH-THINGS
     </header>
     <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#wifi">Wi-Fi Setup</a>
-        <a href="#documentation">Network Documentation</a>
-        <a href="#topology">Network Topologies</a>
-        <a href="#security">Security</a>
-        <a href="#best-practices">Best Practices</a>
+        <ul>
+            <li><a onclick="showSection('introduction')">Introduction</a></li>
+            <li>
+                <a onclick="showSection('wifi')">Wi-Fi Setup</a>
+                <ul>
+                    <li><a onclick="showSection('wifi-basics')">Wi-Fi Basics</a></li>
+                    <li><a onclick="showSection('wifi-security')">Wi-Fi Security</a></li>
+                    <li><a onclick="showSection('wifi-troubleshooting')">Wi-Fi Troubleshooting</a></li>
+                </ul>
+            </li>
+            <li>
+                <a onclick="showSection('networking')">Networking</a>
+                <ul>
+                    <li><a onclick="showSection('cabling')">Networking Cables</a></li>
+                    <li><a onclick="showSection('structured-cabling')">Structured Cabling</a></li>
+                    <li><a onclick="showSection('patch-panel')">Patch Panel</a></li>
+                </ul>
+            </li>
+            <li>
+                <a onclick="showSection('security')">Security</a>
+                <ul>
+                    <li><a onclick="showSection('firewalls')">Firewalls</a></li>
+                    <li><a onclick="showSection('encryption')">Encryption</a></li>
+                    <li><a onclick="showSection('network-monitoring')">Network Monitoring</a></li>
+                </ul>
+            </li>
+            <li>
+                <a onclick="showSection('network-programming')">Network Programming</a>
+                <ul>
+                    <li><a onclick="showSection('tcp-ip')">TCP/IP Communication</a></li>
+                    <li><a onclick="showSection('sockets')">Socket Programming</a></li>
+                    <li><a onclick="showSection('web-development')">Web-Based Networking</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
-    <div class="container">
-        <div class="section" id="introduction">
-            <h2>Introduction to CSS</h2>
-            <p>Computer System Servicing (CSS) involves installing, maintaining, and troubleshooting computer systems and networks. It ensures smooth operations of devices and connectivity.</p>
-        </div>
-        <div class="section" id="wifi">
-            <h2>Setting Up a Wi-Fi Network</h2>
-            <p>Wi-Fi networks allow devices to connect wirelessly to the internet. Setting up involves acquiring a router, configuring security settings, and ensuring proper connectivity.</p>
-            <p>Wi-Fi operates on two primary frequency bands: 2.4 GHz and 5 GHz, affecting range and speed. WPA2 and WPA3 encryptions secure Wi-Fi connections against threats.</p>
-        </div>
-        <div class="section" id="documentation">
-            <h2>Network Documentation</h2>
-            <p>Network documentation records all network-related details, including IP allocations, hardware inventory, and configurations. Proper documentation aids in troubleshooting and network management.</p>
-            <p>Key components include network topology, hardware, software, and IP address allocations. It is essential for network recovery, troubleshooting, and scalability planning.</p>
-        </div>
-        <div class="section" id="topology">
-            <h2>Types of Network Topologies</h2>
-            <ul>
-                <li><b>Star Topology:</b> All devices connect to a central hub.</li>
-                <li><b>Ring Topology:</b> Devices form a ring, each connected to two others.</li>
-                <li><b>Bus Topology:</b> All devices share a single communication line.</li>
-                <li><b>Mesh Topology:</b> Each device connects to multiple others for redundancy.</li>
-                <li><b>Wireless Mesh:</b> Uses multiple wireless access points to extend coverage.</li>
-            </ul>
-        </div>
-        <div class="section" id="security">
-            <h2>Network Security</h2>
-            <p>Securing a network involves setting up strong passwords, using WPA2/WPA3 encryption, and monitoring traffic to prevent unauthorized access.</p>
-            <p>Encryption protects data from being intercepted. Public Wi-Fi networks are more vulnerable, whereas private networks use stronger encryption to prevent unauthorized access.</p>
-        </div>
-        <div class="section" id="best-practices">
-            <h2>Best Practices for Network Management</h2>
-            <p>Maintaining a stable network requires proper documentation, routine security updates, and monitoring for issues. Regular evaluations ensure efficiency and prevent failures.</p>
-            <p>Key steps include:</p>
-            <ul>
-                <li>Establishing a documentation policy to ensure up-to-date network records.</li>
-                <li>Creating a network topology diagram to visualize infrastructure.</li>
-                <li>Labeling and inventorying all network devices.</li>
-                <li>Regularly evaluating documentation for completeness and accuracy.</li>
-            </ul>
-        </div>
-        <div class="section" id="video">
-            <h2>Watch a CSS Tutorial</h2>
-            <p>For more information, watch the video below:</p>
-            <iframe src="https://www.youtube.com/embed/Knhd1TGu5Sc" frameborder="0" allowfullscreen></iframe>
+    <div class="content">
+        <div class="container">
+            <div class="section" id="introduction">
+                <h2>Introduction</h2>
+                <p>Computer System Servicing (CSS) involves installing, maintaining, and troubleshooting computer systems and networks.</p>
+            </div>
+            <div class="section" id="wifi-setup">
+                <h2>Wi-Fi Setup Overview</h2>
+                <p>Wi-Fi setup involves configuring routers, selecting frequency bands (2.4GHz/5GHz), and optimizing performance.</p>
+            </div>
+            <div class="section" id="wifi-basics">
+                <h2>Wi-Fi Basics</h2>
+                <p>Wi-Fi is a wireless networking technology that allows devices to connect without physical cables.</p>
+            </div>
+            <div class="section" id="wifi-security">
+                <h2>Wi-Fi Security</h2>
+                <p>Wi-Fi security includes WPA2, WPA3 encryption, and strong passwords to prevent unauthorized access.</p>
+            </div>
+            <div class="section" id="wifi-troubleshooting">
+                <h2>Wi-Fi Troubleshooting</h2>
+                <p>Wi-Fi troubleshooting involves fixing slow connections, signal interference, and router issues.</p>
+            </div>
+            <div class="section" id="cabling">
+                <h2>Networking Cables</h2>
+                <p>Networking cables such as Ethernet, coaxial, and fiber optics are used for stable data transmission.</p>
+            </div>
+            <div class="section" id="structured-cabling">
+                <h2>Structured Cabling</h2>
+                <p>Structured cabling provides a standardized infrastructure for networking, including backbone and horizontal cabling.</p>
+            </div>
+            <div class="section" id="patch-panel">
+                <h2>Patch Panel</h2>
+                <p>Patch panels help manage network connections, making maintenance and troubleshooting easier.</p>
+            </div>
+            <div class="section" id="firewalls">
+                <h2>Firewalls</h2>
+                <p>Firewalls act as a security layer to prevent unauthorized access to the network.</p>
+            </div>
+            <div class="section" id="encryption">
+                <h2>Encryption</h2>
+                <p>Encryption protects data by converting it into a secure format, ensuring confidentiality.</p>
+            </div>
+            <div class="section" id="network-monitoring">
+                <h2>Network Monitoring</h2>
+                <p>Network monitoring tools help track activity, detect issues, and prevent cyber threats.</p>
+            </div>
+            <div class="section" id="tcp-ip">
+                <h2>TCP/IP Communication</h2>
+                <p>TCP/IP is the core protocol for internet communication, ensuring reliable data transfer.</p>
+            </div>
+            <div class="section" id="sockets">
+                <h2>Socket Programming</h2>
+                <p>Socket programming allows network applications to communicate using TCP and UDP.</p>
+            </div>
+            <div class="section" id="web-development">
+                <h2>Web-Based Networking</h2>
+                <p>Web-based networking enables data exchange over the internet using APIs and WebSockets.</p>
+            </div>
         </div>
     </div>
     <footer>
-        <p>&copy; 2025 CSS Servicing Guide</p>
+        <p>&copy; 2025 CSS Servicing Guide | Designed for Professionals</p>
     </footer>
 </body>
 </html>
