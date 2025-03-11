@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Computer System Servicing</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: #333; color: #fff; padding: 15px; text-align: center; }
+        nav { background: #444; padding: 10px; text-align: center; display: flex; flex-wrap: wrap; justify-content: center; }
+        nav a { color: white; margin: 10px; text-decoration: none; font-size: 18px; }
+        .container { padding: 20px; max-width: 1200px; margin: auto; }
+        .section { background: white; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        footer { background: #333; color: #fff; text-align: center; padding: 10px; margin-top: 20px; }
+        iframe { width: 100%; max-width: 560px; height: auto; aspect-ratio: 16/9; }
+        @media (max-width: 768px) {
+            nav a { font-size: 16px; }
+            .container { padding: 10px; }
+            .section { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Computer System Servicing</h1>
+    </header>
+    <nav>
+        <a href="#introduction">Introduction</a>
+        <a href="#wifi">Wi-Fi Setup</a>
+        <a href="#documentation">Network Documentation</a>
+        <a href="#topology">Network Topologies</a>
+        <a href="#security">Security</a>
+        <a href="#best-practices">Best Practices</a>
+    </nav>
+    <div class="container">
+        <div class="section" id="introduction">
+            <h2>Introduction to CSS</h2>
+            <p>Computer System Servicing (CSS) involves installing, maintaining, and troubleshooting computer systems and networks. It ensures smooth operations of devices and connectivity.</p>
+        </div>
+        <div class="section" id="wifi">
+            <h2>Setting Up a Wi-Fi Network</h2>
+            <p>Wi-Fi networks allow devices to connect wirelessly to the internet. Setting up involves acquiring a router, configuring security settings, and ensuring proper connectivity.</p>
+            <p>Wi-Fi operates on two primary frequency bands: 2.4 GHz and 5 GHz, affecting range and speed. WPA2 and WPA3 encryptions secure Wi-Fi connections against threats.</p>
+        </div>
+        <div class="section" id="documentation">
+            <h2>Network Documentation</h2>
+            <p>Network documentation records all network-related details, including IP allocations, hardware inventory, and configurations. Proper documentation aids in troubleshooting and network management.</p>
+            <p>Key components include network topology, hardware, software, and IP address allocations. It is essential for network recovery, troubleshooting, and scalability planning.</p>
+        </div>
+        <div class="section" id="topology">
+            <h2>Types of Network Topologies</h2>
+            <ul>
+                <li><b>Star Topology:</b> All devices connect to a central hub.</li>
+                <li><b>Ring Topology:</b> Devices form a ring, each connected to two others.</li>
+                <li><b>Bus Topology:</b> All devices share a single communication line.</li>
+                <li><b>Mesh Topology:</b> Each device connects to multiple others for redundancy.</li>
+                <li><b>Wireless Mesh:</b> Uses multiple wireless access points to extend coverage.</li>
+            </ul>
+        </div>
+        <div class="section" id="security">
+            <h2>Network Security</h2>
+            <p>Securing a network involves setting up strong passwords, using WPA2/WPA3 encryption, and monitoring traffic to prevent unauthorized access.</p>
+            <p>Encryption protects data from being intercepted. Public Wi-Fi networks are more vulnerable, whereas private networks use stronger encryption to prevent unauthorized access.</p>
+        </div>
+        <div class="section" id="best-practices">
+            <h2>Best Practices for Network Management</h2>
+            <p>Maintaining a stable network requires proper documentation, routine security updates, and monitoring for issues. Regular evaluations ensure efficiency and prevent failures.</p>
+            <p>Key steps include:</p>
+            <ul>
+                <li>Establishing a documentation policy to ensure up-to-date network records.</li>
+                <li>Creating a network topology diagram to visualize infrastructure.</li>
+                <li>Labeling and inventorying all network devices.</li>
+                <li>Regularly evaluating documentation for completeness and accuracy.</li>
+            </ul>
+        </div>
+        <div class="section" id="video">
+            <h2>Watch a CSS Tutorial</h2>
+            <p>For more information, watch the video below:</p>
+            <iframe src="https://www.youtube.com/embed/Knhd1TGu5Sc" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 CSS Servicing Guide</p>
+    </footer>
+</body>
+</html>
